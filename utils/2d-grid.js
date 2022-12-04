@@ -1,4 +1,4 @@
-const Utils = require("./utils");
+const Utils = require("./iteration-utils");
 
 class Grid2d {
   constructor(gridData) {

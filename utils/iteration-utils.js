@@ -1,5 +1,4 @@
-// TODO rename to IterationUtils in some future version
-class Utils {
+class IterationUtils {
   nTimes(n, cb) {
     for (let i = 0; i < n; i++) {
       cb(i);
@@ -27,4 +26,4 @@ class Utils {
   }
 }
 
-module.exports = new Utils();
+module.exports = new IterationUtils();
