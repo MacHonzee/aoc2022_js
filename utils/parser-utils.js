@@ -20,6 +20,11 @@ class ParserUtils {
     return this;
   }
 
+  get spaces() {
+    this._spaces = true;
+    return this;
+  }
+
   parse(rootPath) {
     const inputPath = path.join(rootPath, "input.txt");
 
@@ -30,13 +35,20 @@ class ParserUtils {
     }
 
     if (this._byLines) {
-      // TODO more options and logic once it is necessary
-      output = output.map(itemGroup => itemGroup.split(LINE_SEP));
+      if (typeof output === "string") {
+        output = output.split(LINE_SEP);
+      } else {
+        output = output.map(itemGroup => itemGroup.split(LINE_SEP));
+      }
     }
 
     if (this._numbers) {
       // TODO consider single line / no blank lines once it is necessary
       output.forEach((itemGroup, i) => itemGroup.forEach((item, y) => output[i][y] = parseInt(item)));
+    }
+
+    if (this._spaces) {
+      output = output.map(itemGroup => itemGroup.split(" "));
     }
 
     return output;
