@@ -1,7 +1,3 @@
-class StringUtils {
-  setCharAt(string, char, i) {
-    return string.substr(0, i) + char + string.substr(i + 1);
-  }
-}
-
-module.exports = new StringUtils();
+String.prototype.setCharAt = function (char, i) {
+  return this.substr(0, i) + char + this.substr(i + 1);
+};
