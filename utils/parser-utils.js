@@ -2,8 +2,6 @@ const path = require("node:path");
 const fs = require("node:fs");
 const os = require("node:os");
 
-const LINE_SEP = os.EOL;
-
 class ParserUtils {
   get lines() {
     this._byLines = true;
@@ -28,17 +26,17 @@ class ParserUtils {
   parse(rootPath) {
     const inputPath = path.join(rootPath, "input.txt");
 
-    let output = fs.readFileSync(inputPath, "utf-8").trim();
+    let output = fs.readFileSync(inputPath, "utf-8").trimEnd();
 
     if (this._byBlankLines) {
-      output = output.split(LINE_SEP + LINE_SEP);
+      output = output.split(ParserUtils.LINE_SEP + ParserUtils.LINE_SEP);
     }
 
     if (this._byLines) {
       if (typeof output === "string") {
-        output = output.split(LINE_SEP);
+        output = output.split(ParserUtils.LINE_SEP);
       } else {
-        output = output.map(itemGroup => itemGroup.split(LINE_SEP));
+        output = output.map(itemGroup => itemGroup.split(ParserUtils.LINE_SEP));
       }
     }
 
@@ -54,5 +52,7 @@ class ParserUtils {
     return output;
   }
 }
+
+ParserUtils.LINE_SEP = os.EOL;
 
 module.exports = ParserUtils;
