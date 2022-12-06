@@ -1,4 +1,4 @@
-const Utils = require("./array-utils");
+const ArrayUtils = require("./array-utils");
 
 class Grid2d {
   constructor(gridData) {
@@ -16,15 +16,15 @@ class Grid2d {
   }
 
   eachColumn(cb) {
-    Utils.nTimes(this._rowLength, (i) => {
+    ArrayUtils.nTimes(this._rowLength, (i) => {
       let column = this.getCol(i);
       cb(column, i);
     });
   }
 
   eachCell(cb) {
-    Utils.nTimes(this._data.length, (rowI) => {
-      Utils.nTimes(this._data[rowI].length, (columnI) => {
+    ArrayUtils.nTimes(this._data.length, (rowI) => {
+      ArrayUtils.nTimes(this._data[rowI].length, (columnI) => {
         let cell = this._data[rowI][columnI];
         cb(cell, rowI, columnI);
       });
