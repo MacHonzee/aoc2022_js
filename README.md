@@ -7,3 +7,4 @@ Advent of Code for year 2022! Woohoo! In Javascript / Node.js, potentially npm p
 3) I rewrote Utils for String and Array to a bit of prototype pollution. Ugly, but it is nicer. Anyway, day 3 was not hard, but first time I had to use debugger (split into groups of three was the easy, but ugly part lol).
 4) Easy one aswell, just about boolean logic and ranges overlapping.
 5) A bit of array handling. Parsing the input actually took much more time and lines of code than just moving the items in the arrays.
+6) First part - ugly but cheap. Second part - simple, nice, but not that performant.
