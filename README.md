@@ -9,3 +9,4 @@ Advent of Code for year 2022! Woohoo! In Javascript / Node.js, potentially npm p
 5) A bit of array handling. Parsing the input actually took much more time and lines of code than just moving the items in the arrays.
 6) First part - ugly but cheap. Second part - simple, nice, but not that performant.
 7) Pfew, I fucked up a lot. Thought that dir names should be unique, which was a huge misunderstanding that led to several rewrites. Oopsie woopsie.
+8) It is starting! The programming is never that heard as reading the assignment very, very precisely. Made a few mistakes, even had to make sure on Reddit that there is not a suspected error in the assignment (of course not...).

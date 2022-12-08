@@ -6,7 +6,7 @@ class ArrayUtils {
   }
 
   rangeTimes(from, to, cb) {
-    for (let i = from; i <= to; i++) {
+    for (let i = from; i < to; i++) {
       cb(i);
     }
   }

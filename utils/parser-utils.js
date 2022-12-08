@@ -23,6 +23,11 @@ class ParserUtils {
     return this;
   }
 
+  get characters() {
+    this._chars = true;
+    return this;
+  }
+
   parse(rootPath) {
     const inputPath = path.join(rootPath, "input.txt");
 
@@ -38,6 +43,10 @@ class ParserUtils {
       } else {
         output = output.map(itemGroup => itemGroup.split(ParserUtils.LINE_SEP));
       }
+    }
+
+    if (this._chars) {
+      output = output.map(line => line.split(""));
     }
 
     if (this._numbers) {

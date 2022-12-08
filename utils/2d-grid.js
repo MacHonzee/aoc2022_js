@@ -1,9 +1,14 @@
 const ArrayUtils = require("./array-utils");
+const ParserUtils = require("./parser-utils");
 
 class Grid2d {
-  constructor(gridData) {
-    if (typeof gridData === "string") {
-      this._data = gridData.split("\n").map(line => line.split(""));
+  constructor({gridData, dirname, numbers}) {
+    if (dirname) {
+      const parser = new ParserUtils().lines.characters;
+      if (numbers) {
+        parser.numbers;
+      }
+      this._data = parser.parse(dirname);
     } else {
       this._data = gridData;
     }
@@ -25,6 +30,15 @@ class Grid2d {
   eachCell(cb) {
     ArrayUtils.nTimes(this._data.length, (rowI) => {
       ArrayUtils.nTimes(this._data[rowI].length, (columnI) => {
+        let cell = this._data[rowI][columnI];
+        cb(cell, rowI, columnI);
+      });
+    });
+  }
+
+  eachInnerCell(cb) {
+    ArrayUtils.rangeTimes(1, this._data.length - 1, (rowI) => {
+      ArrayUtils.rangeTimes(1, this._data[rowI].length - 1, (columnI) => {
         let cell = this._data[rowI][columnI];
         cb(cell, rowI, columnI);
       });
