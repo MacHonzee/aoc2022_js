@@ -3,6 +3,7 @@ const ParserUtils = require("./parser-utils");
 const NumberUtils = require("./number-utils");
 const ArrayUtils = require("./array-utils");
 require("./string-utils");
+require("./object-utils");
 
 module.exports = {
   Grid2d,

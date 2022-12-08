@@ -1,5 +1,4 @@
-const ParserUtils = require("../utils/parser-utils");
-const Utils = require("../utils");
+const {ParserUtils} = require("../utils");
 
 const input = new ParserUtils().blankLines.lines.numbers.parse(__dirname);
 
