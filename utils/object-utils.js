@@ -13,3 +13,7 @@ Object.prototype.eachValue = function (cb) {
 Object.prototype.eachEntry = function (cb) {
   Object.entries(this).forEach(cb);
 };
+
+Object.prototype.deepCopy = function () {
+  return JSON.parse(JSON.stringify(this));
+};

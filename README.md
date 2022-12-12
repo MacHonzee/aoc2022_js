@@ -12,3 +12,4 @@ Advent of Code for year 2022! Woohoo! In Javascript / Node.js, potentially npm p
 8) It is starting! The programming is never that heard as reading the assignment very, very precisely. Made a few mistakes, even had to make sure on Reddit that there is not a suspected error in the assignment (of course not...).
 9) Starting to get ugly :D The moving part of the snake in part two took me quite a lot of time, because I did not read the example properly and misunderstood how it behaves. Again. Anyone the many branches can be done probably better and shorter, this makes it at least kinda clear.
 10) Ha, read carefully, studied examples and wrote it very easily. Surprisingly this was really easy.
+11) God dammit! This was purely Math theory based, I could not think of the Lowest Commmon Multiple of the modulos at all. Basically, it would be so simple if I knew this high school trick.
