@@ -46,6 +46,10 @@ class Grid2d {
   }
 
   getNeighbours(rowI, columnI, diagonals = false) {
+    return this.getNeighbourCoords(rowI, columnI, diagonals).map(([rowI, colI]) => this.data[rowI][colI]);
+  }
+
+  getNeighbourCoords(rowI, columnI, diagonals = false) {
     let neighborIndexes = [];
 
     let notOnFirstRow = rowI > 0;
@@ -67,7 +71,7 @@ class Grid2d {
     if (notOnLastRow) neighborIndexes.push([rowI + 1, columnI]);
     if (diagonals && notOnLastRow && notInLastColumn) neighborIndexes.push([rowI + 1, columnI + 1]);
 
-    return neighborIndexes.map(([rowI, colI]) => this.data[rowI][colI]);
+    return neighborIndexes;
   }
 
   visualize() {
@@ -114,6 +118,15 @@ class Grid2d {
 
   setCell(rowI, colI, value) {
     this._data[rowI][colI] = value;
+  }
+
+  findIndex(cb) {
+    for (let colI = 0; colI < this.colCount; colI++) {
+      for (let rowI = 0; rowI < this.rowCount; rowI++) {
+        let found = cb(this.getCell(rowI, colI));
+        if (found) return [rowI, colI];
+      }
+    }
   }
 
   _calculateRowLength() {
